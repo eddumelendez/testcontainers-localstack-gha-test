@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class LocalStackContainerTest {
 
     @ParameterizedTest(name = "localstack version {0}")
-    @ValueSource(strings = {"0.11.3", "0.12.8", "0.13.0", "0.14.0", "0.14.5", "1.0.4"})
+    @ValueSource(strings = {"0.11.3", "0.12.8", "0.13.0", "0.14.0", "0.14.1", "0.14.2", "0.14.3", "0.14.4", "0.14.5", "1.0.4"})
     void test(String tag) {
         try (LocalStackContainer localstack = new LocalStackContainer(DockerImageName.parse("localstack/localstack").withTag(tag))
                 .withServices(LocalStackContainer.Service.SQS)
